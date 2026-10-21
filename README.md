@@ -97,9 +97,17 @@ That's the default for new projects. Inside Claude Code, opened in your project 
 
 If your project uses `pnpm`, `yarn` or `bun`, use `pnpm dlx`, `yarn dlx` or `bunx` instead of `npx`.
 
-### Step 5: restart and check
+### Step 5: reload and check
 
-Close Claude Code (`/exit`), start it again with `claude --chrome`, and type:
+No need to leave Claude Code. Inside it, one line at a time:
+
+```
+/reload-plugins
+```
+
+```
+/reload-skills
+```
 
 ```
 /plugin
