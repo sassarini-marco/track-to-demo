@@ -37,7 +37,7 @@
 
 ## Presentation
 - Design system for the deck (a claude.ai Design System link, or "none"):
-- Slide template file (.pptx or .potx path, kept out of git unless the team allows it, or "none"):
+- Slide template file (.pptx or .potx in templates/, kept out of git unless the team allows it, or "none"):
 - Deck:
 
 ## Boards

@@ -18,8 +18,8 @@ Never invent results, metrics or integrations. Keep mock, implemented and verifi
 3. Validation. The team comments on the deck; read the comments, apply the requested changes, ask for confirmation.
    Do not export before the team validates.
 4. The .pptx. If the brief names a slide template, work on a copy of it with the pptx skill, keeping its masters and
-   layouts: same content and order as the validated deck, real screenshots, speaker notes. Save it next to the template,
-   out of git unless the team allows it. Without a template, tell the team to download the validated deck as .pptx
+   layouts: same content and order as the validated deck, real screenshots, speaker notes. Save it next to the template in
+   templates/, out of git unless the team allows it. Without a template, tell the team to download the validated deck as .pptx
    from the deck's download menu. A template but no pptx skill: say so, give the install command from kickoff and the deck link.
 5. PRESENTATION.md: script, speaker notes, rehearsals to do before the freeze, likely questions and answers, links.
    Update your rows in WORK.md, then commit.

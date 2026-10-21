@@ -117,6 +117,8 @@ Everyone opens Claude Code in the project folder. Each step is one command.
 
 ### 1. Kickoff (one person, ~15 minutes)
 
+Have a company slide template (`.pptx` or `.potx`)? Before starting, create a folder called `templates` in your project and put the file there. Claude keeps that folder out of git, so company files are never uploaded by mistake. No template? Skip this: the deck can still be downloaded as `.pptx`.
+
 ```
 /track-to-demo:kickoff
 ```
@@ -180,7 +182,7 @@ Claude proposes the slide outline, builds the deck with real screenshots, waits 
 
 ## Files that appear in your project
 
-You don't fill any of these in beforehand: Claude creates them.
+Claude creates and fills these in. The only exception is `templates/`, where you put your slide template if you have one.
 
 | File | What's in it |
 |---|---|
@@ -188,6 +190,7 @@ You don't fill any of these in beforehand: Claude creates them.
 | `explorations/` | Reference images and links to everyone's design boards |
 | `WORK.md` | The task list: who does what, status, test evidence |
 | `PRESENTATION.md` | Demo script, speaker notes, Q&A |
+| `templates/` | Your slide template and the final `.pptx`. You create it; it stays out of git |
 
 ---
 
