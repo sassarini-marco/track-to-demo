@@ -31,8 +31,6 @@ No claude.ai login? It still works: the design ideas become pages of your app in
 
 Copy and paste each block, one at a time, in order. When a step says *"inside Claude Code"*, paste it where you chat with Claude. When it says *"in a terminal"*, paste it in a normal terminal window.
 
-The repository is private: ask to be invited to it on GitHub before step 2, otherwise step 2 fails.
-
 ### Step 1: start Claude Code with the browser enabled
 
 In a terminal, inside your project folder:

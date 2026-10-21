@@ -1,6 +1,9 @@
 {
   "name": "track-to-demo",
   "owner": { "name": "track-to-demo maintainers" },
+  "metadata": {
+    "description": "Claude Code plugin that takes a team from a challenge track to a working prototype and a validated deck in one day."
+  },
   "plugins": [
     {
       "name": "track-to-demo",
