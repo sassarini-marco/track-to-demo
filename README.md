@@ -27,18 +27,87 @@ No claude.ai login? It still works: the design ideas become pages of your app in
 
 ---
 
-## Install (once per person)
+## Setup (once per person, ~5 minutes)
 
-Open Claude Code and type these two lines, one at a time:
+Copy and paste each block, one at a time, in order. When a step says *"inside Claude Code"*, paste it where you chat with Claude. When it says *"in a terminal"*, paste it in a normal terminal window.
+
+The repository is private: ask to be invited to it on GitHub before step 2, otherwise step 2 fails.
+
+### Step 1: start Claude Code with the browser enabled
+
+In a terminal, inside your project folder:
+
+```
+claude --chrome
+```
+
+Then, inside Claude Code, log in to claude.ai (skip it if you are already logged in):
+
+```
+/login
+```
+
+### Step 2: install the plugin (required)
+
+Inside Claude Code:
 
 ```
 /plugin marketplace add sassarini-marco/track-to-demo
+```
+
+```
 /plugin install track-to-demo@track-to-demo
 ```
 
-The repository is private: you need to be invited to it on GitHub first, otherwise the first command fails.
+### Step 3: install the recommended helpers
 
-The first step (`kickoff`) tells you which optional helpers are missing and gives you the exact commands to install them. You don't need to install anything else beforehand.
+These are optional, but the results are much better with them. Inside Claude Code, one line at a time:
+
+```
+/plugin install frontend-design@claude-plugins-official
+```
+
+```
+/plugin marketplace add pbakaus/impeccable
+```
+
+```
+/plugin install impeccable@impeccable
+```
+
+```
+/plugin marketplace add anthropics/skills
+```
+
+```
+/plugin install document-skills@anthropic-agent-skills
+```
+
+What they do:
+
+- **frontend-design**: better-looking interfaces;
+- **impeccable**: polishes designs and checks the UI for the typical "made by AI" look;
+- **document-skills**: exports the final deck as a `.pptx` on your company template.
+
+### Step 4: shadcn helper (only if your app uses React with shadcn/ui)
+
+That's the default for new projects. In a terminal, inside your project folder:
+
+```
+npx skills add shadcn/ui --skill shadcn
+```
+
+If your project uses `pnpm`, `yarn` or `bun`, use `pnpm dlx`, `yarn dlx` or `bunx` instead of `npx`.
+
+### Step 5: restart and check
+
+Close Claude Code (`/exit`), start it again with `claude --chrome`, and type:
+
+```
+/plugin
+```
+
+You should see `track-to-demo`, `frontend-design`, `impeccable` and `document-skills` in the list. If one is missing, run its step again. `kickoff` also checks the helpers and tells you if anything is missing.
 
 ---
 
