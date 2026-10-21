@@ -1,6 +1,6 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset=".github/banner-dark.svg">
-  <img src=".github/banner-light.svg" alt="track-to-demo. Ideas win hackathons. We clear the way. The day goes kickoff, explore, build, present, demo." width="100%">
+  <img src=".github/banner-light.svg" alt="/track-to-demo. Ideas win hackathons. We clear the way. The day goes kickoff, explore, build, present, demo." width="100%">
 </picture>
 
 **Morning: a challenge. Evening: a working prototype and a pitch deck.**
