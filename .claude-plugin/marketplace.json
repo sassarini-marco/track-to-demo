@@ -1,0 +1,12 @@
+{
+  "name": "track-to-demo",
+  "owner": { "name": "track-to-demo maintainers" },
+  "plugins": [
+    {
+      "name": "track-to-demo",
+      "source": "./",
+      "description": "Prototype end to end from a challenge track: brief, design boards, build, verify, slide deck.",
+      "version": "0.1.0"
+    }
+  ]
+}

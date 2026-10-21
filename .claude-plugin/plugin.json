@@ -1,0 +1,8 @@
+{
+  "name": "track-to-demo",
+  "version": "0.1.0",
+  "description": "Prototype end to end from a challenge track: kickoff brief, design exploration on Claude boards, build and verify in your own repo, and a validated slide deck on your template.",
+  "author": { "name": "Marco Sassarini" },
+  "license": "MIT",
+  "keywords": ["hackathon", "prototyping", "design", "presentation", "workflow"]
+}
