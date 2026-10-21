@@ -1,47 +1,32 @@
 <p align="center">
-  <img src=".claude-plugin/icon.png" alt="track-to-demo icon" width="128" height="128">
+  <img src=".claude-plugin/icon.png" alt="" width="112" height="112">
 </p>
 
 <h1 align="center">track-to-demo</h1>
 
 <p align="center">
   <b>Morning: a challenge. Evening: a working prototype and a pitch deck.</b><br>
-  A Claude Code plugin that walks your team through the whole day, so you can focus on the idea.
+  A Claude Code plugin for hackathon teams. MIT licensed.
 </p>
 
-<p align="center">
-  <img alt="Claude Code plugin" src="https://img.shields.io/badge/Claude%20Code-plugin-5C38C4">
-  <img alt="Skills" src="https://img.shields.io/badge/skills-4-FFC45C">
-  <img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-24204F">
-</p>
+## Start
 
-<p align="center">
-  <a href="#-start-in-2-minutes">Start</a> ·
-  <a href="#-the-day-at-a-glance">The day</a> ·
-  <a href="#why-youll-like-it">Why</a> ·
-  <a href="#the-day-in-detail">Details</a>
-</p>
+Everyone on the team does this once, in the project folder. Each box has a copy button.
 
----
-
-## ⚡ Start in 2 minutes
-
-Every person, once per project. Copy each box with its copy button.
-
-**1.** In a terminal, inside your project folder (it can be empty):
+**1.** Open a terminal in your project folder (an empty one is fine) and start Claude:
 
 ```
 claude --chrome
 ```
 
-**2.** Paste this inside Claude Code. Claude installs everything; say yes when it asks.
+**2.** Paste this into Claude. It installs everything and asks before each command; say yes.
 
 ```
 Set up track-to-demo in this project, following:
 https://raw.githubusercontent.com/sassarini-marco/track-to-demo/main/SETUP.md
 ```
 
-**3.** When Claude is done, paste these two, one at a time:
+**3.** Load what was installed:
 
 ```
 /reload-plugins
@@ -51,135 +36,124 @@ https://raw.githubusercontent.com/sassarini-marco/track-to-demo/main/SETUP.md
 /reload-skills
 ```
 
-**4.** Go. One person pastes this, then pastes the challenge text:
+**4.** One person starts the day. Paste this, then paste the challenge text:
 
 ```
 /track-to-demo:kickoff
 ```
 
-Not logged in to claude.ai yet? Type `/login` first: boards and slides live there.
+Not signed in to claude.ai? Type `/login` first. Design boards and slides live there.
 
----
+## The day
 
-## 🗺️ The day at a glance
-
-| When | Who | Paste this | You get |
+| When | Who | Paste | You get |
 |---|---|---|---|
-| Start | one person | `/track-to-demo:kickoff` | `BRIEF.md`: the shared plan, plus realistic demo data |
-| Morning | each designer | `/track-to-demo:explore <your-name>` | your design board on claude.ai |
-| Late morning | the team | `/track-to-demo:explore compose` | the final design, merged from the best parts |
-| Midday | one developer | `/track-to-demo:build handoff` | `WORK.md`: small tasks, one owner each |
-| All day | each developer | `/track-to-demo:build next` | your next task built, tested and committed |
+| Start | one person | `/track-to-demo:kickoff` | `BRIEF.md`, the plan everyone works from, and demo data |
+| Morning | each designer | `/track-to-demo:explore <your-name>` | a design board on claude.ai |
+| Late morning | the team | `/track-to-demo:explore compose` | one final design, built from the parts you picked |
+| Midday | one developer | `/track-to-demo:build handoff` | `WORK.md`, small tasks with one owner each |
+| All day | each developer | `/track-to-demo:build next` | your next task, built, tested and committed |
 | Before each deadline | anyone | `/track-to-demo:build verify` | a check against the judging criteria |
-| Afternoon | the presenter | `/track-to-demo:present` | the slide deck and the demo script |
+| Afternoon | the presenter | `/track-to-demo:present` | the deck and the demo script |
 
-Claude asks only what it can't work out by itself, and replies in your language.
+Claude asks only what it can't find out on its own, and answers in your language.
 
----
+## Why
 
-## Why you'll like it
+A hackathon day is short, and it goes wrong in the same places every time. The first hour disappears into agreeing what to build. Five people sketch five different apps. Someone's work gets overwritten just before the demo. A slide shows a number nobody can explain.
 
-Hackathons and time-boxed prototypes go wrong in the same ways. Hours go into deciding instead of building. Five people end up designing five apps. Someone's work gets overwritten an hour before the demo. The slides show numbers nobody can back up.
+track-to-demo handles those parts so the team can spend the day on the ones worth being there for: the idea, the arguments about it, and the people you're building with. It works the same for someone on their first hackathon and for a team that has done twenty.
 
-track-to-demo gives the day a backbone:
+What that looks like in practice:
 
-- 🧭 **One shared plan in 15 minutes.** Paste the challenge; Claude pulls out the goals, judging criteria and deadlines, and asks only what it can't work out by itself.
-- 🎨 **Design ideas side by side, then one direction.** Each person sketches a direction on a claude.ai board from images they like; the team picks the best parts and Claude merges them.
-- 🛠️ **Building that holds together.** Small tasks with one owner each, real tests, and a check against the challenge's criteria before every freeze.
-- 🎤 **A deck you can defend.** Real screenshots, real data, mock-ups labelled as mock-ups, and on your company template if you have one.
-- 🙌 **Less friction, more hackathon.** Claude takes care of the plumbing: setup, plans, task lists, checks, slides. Your time goes to the best part of the day: brainstorming, chasing the idea, the team and the people around you. First-timers and seasoned engineers alike.
+- The plan is a file in your repo, not a memory of a meeting. Every step reads it, so nobody works from an old version.
+- Designs start apart and end as one. Each designer explores from their own reference images, then the team takes the best parts of each board.
+- Every task has exactly one owner, and ends with tests and a commit, so the next person starts from what really works.
+- The deck uses real screenshots of the running app. Made-up data is labelled as made up.
 
 ```mermaid
 flowchart TD
-    T([📄 Challenge]) --> K[🧭 kickoff]
+    T([Challenge]) --> K[kickoff]
     K -. writes .-> B[(BRIEF.md · data/)]
-    K --> E1[🎨 explore · person A]
-    K --> E2[🎨 explore · person B]
-    E1 --> C[✨ explore compose]
+    K --> E1[explore · designer A]
+    K --> E2[explore · designer B]
+    E1 --> C[explore compose]
     E2 --> C
-    C --> H[🛠️ build handoff]
+    C --> H[build handoff]
     H -. writes .-> W[(WORK.md)]
-    H --> N[build next · task by task]
-    N --> V[✅ build verify]
+    H --> N[build next]
+    N --> V[build verify]
     V -- problems become tasks --> N
-    V --> P[🎤 present]
+    V --> P[present]
     P -. writes .-> S[(deck · PRESENTATION.md)]
-    P --> D([🏁 Demo])
+    P --> D([Demo])
 ```
 
-Everything is written into plain files in your repository, so the whole team, and Claude, always start from the same facts.
+## Step by step
 
----
+### Kickoff · one person, about 15 minutes
 
-## The day in detail
+Two optional things to do first:
 
-### 1. 🧭 Kickoff (one person, ~15 minutes)
+- If you have a company slide template (`.pptx` or `.potx`), put it in a `templates` folder.
+- If the challenge came with data files (spreadsheets, CSV, JSON), put them in a `data` folder.
 
-Before starting, two optional things:
+Claude keeps both folders out of git.
 
-- **A company slide template** (`.pptx` or `.potx`)? Put it in a folder called `templates` in your project. Claude keeps it out of git.
-- **Data files that came with the challenge** (spreadsheets, CSV, JSON…)? Put them in a folder called `data`. Claude keeps them out of git too.
+Then run `/track-to-demo:kickoff` and paste the challenge, or give a file path or link. Claude:
 
-Then run `/track-to-demo:kickoff` and paste the challenge text (or give a file path or link). Claude:
+- sums up goals, judging criteria and deadlines, and asks you to confirm them;
+- reads your code to see what technology you already use, or proposes TypeScript, React and shadcn/ui for an empty folder;
+- asks in one go for whatever is still missing: team, schedule, idea, design system, slide template;
+- writes realistic made-up data in `data/` for whatever the demo needs, so designs, app and slides show the same numbers;
+- puts it all in `BRIEF.md`.
 
-- summarises goals, judging criteria and deadlines, and asks you to confirm;
-- looks at your code to understand the technology already in use. If the folder is empty, it proposes **TypeScript + React with shadcn/ui** and asks you to confirm;
-- asks, all at once, only what's missing: who's in the team, the schedule, the idea, the technology (only for an empty folder), the design system, the slide template;
-- lists the data the prototype will use and, for whatever is missing, creates realistic **made-up (synthetic) data** in `data/`, so designs, app and slides all show the same numbers;
-- writes everything in **`BRIEF.md`**, the shared plan every later step reads.
+Before exploring, each designer drops 2 or 3 images they like (apps, websites, anything) in `explorations/references/<their-name>/`.
 
-Then **each person who explores a design** puts 2-3 images they like (screenshots of apps, websites, anything) in `explorations/references/<their-name>/`.
+### Explore · each designer, in parallel
 
-### 2. 🎨 Explore designs (each designer, in parallel)
+`/track-to-demo:explore <your-name>` builds your design board on claude.ai from your images: the main screen, plus what it looks like when it's empty or something fails. Share it with the team (Share, then edit access).
 
-Run `/track-to-demo:explore <your-name>`. Claude creates a design board on claude.ai from your reference images, with the main screen and the empty and error states. Share the board with the team (**Share → edit access**).
+### Compose · the team
 
-### 3. ✨ Pick the final design (team)
+Look at the boards together and say what to take from which, for example "layout from Anna, colours from Luca". Then `/track-to-demo:explore compose` builds the final design. If you can't decide, run it anyway: Claude compares the boards, recommends a mix and asks before building it.
 
-Look at the boards together and say what you like from each one, for example *"layout from Anna, colours from Luca"*. Then run `/track-to-demo:explore compose`: Claude builds the **"Final direction"** board from your choices. Not sure what to pick? Run it anyway: Claude compares the boards and recommends a mix, then asks before building it.
+### Build · developers
 
-### 4. 🛠️ Build (developers)
+- `/track-to-demo:build handoff`, once. Splits the work into tasks in `WORK.md`.
+- `/track-to-demo:build next`, as often as you like. Does your next task: code, tests, commit.
+- `/track-to-demo:build verify`, before every checkpoint and the feature freeze. Checks the app against the judging criteria and turns each problem into a task.
 
-- `/track-to-demo:build handoff`, once: Claude splits the work into small tasks, each with one owner, and writes them in **`WORK.md`**.
-- `/track-to-demo:build next`, as often as you like: Claude does your next task, writes the code, adds tests, runs them and commits.
-- `/track-to-demo:build verify`, before each checkpoint and before the feature freeze: Claude checks the prototype against the challenge's criteria and adds any problem it finds as a new task.
+### Present · the presenter
 
-### 5. 🎤 Present (presenter)
+`/track-to-demo:present` proposes the slide outline, builds the deck with real screenshots, waits for the team's comments, then exports the `.pptx` on your template. It also writes `PRESENTATION.md`: the script and the questions judges are likely to ask.
 
-Run `/track-to-demo:present`. Claude proposes the slide outline, builds the deck with real screenshots, waits for the team's comments and approval, then exports the `.pptx` on your template. It also writes **`PRESENTATION.md`** with the script and likely questions from the judges.
-
----
-
-## Setup in detail
+## Details
 
 ### What you need
 
-| What | Why |
-|---|---|
-| **Claude Code** (terminal, or the Code tab of the Claude Desktop app) | The plugin runs inside it |
-| **A claude.ai account**, logged in (`/login`) | Design boards and the slide deck live on claude.ai |
-| **Your team in the same claude.ai organization** | So you can share boards with each other |
-| **A folder with your project** (it can be empty) | The prototype is built there |
-| **Google Chrome** (recommended) | Claude checks the app in the browser (`claude --chrome`) |
+- Claude Code, in a terminal or in the Code tab of the Claude Desktop app.
+- A claude.ai account, and the whole team in the same claude.ai organization so you can share boards.
+- Google Chrome, so Claude can check the app in the browser (recommended).
 
-No claude.ai login? It still works: the design ideas become pages of your app instead of boards, and the deck stops at the outline and script.
+Without claude.ai, it still works: design ideas become pages of your app, and the deck stops at outline and script.
 
-### What the setup message installs
+### What the setup installs
 
-The message points Claude to [`SETUP.md`](SETUP.md), which you can read. It installs:
+The setup message points Claude to [`SETUP.md`](SETUP.md). It installs, for this project and only for you:
 
-- **track-to-demo**: this plugin;
-- **frontend-design**: better-looking interfaces;
-- **impeccable**: polishes designs and checks the UI for the typical "made by AI" look;
-- **document-skills**: exports the final deck as a `.pptx` on your company template;
-- **shadcn** (only for an empty folder or a React app with shadcn/ui): helps Claude use those components correctly.
+- **track-to-demo**, this plugin;
+- **frontend-design**, for better-looking interfaces;
+- **impeccable**, which polishes designs and catches the generic "made by AI" look;
+- **document-skills**, which exports the deck as `.pptx` on your template;
+- **shadcn**, only for an empty folder or a React app that uses shadcn/ui.
 
-Everything is installed **only in this project and only for you** (`--scope local`): your other projects don't change. The settings file that records it, `.claude/settings.local.json`, is added to `.gitignore`, so it never ends up in git. Type `/plugin` to see what's installed.
+Your other projects don't change. The file that records this, `.claude/settings.local.json`, goes into `.gitignore`. Type `/plugin` to see what's installed.
 
 <details>
-<summary>Prefer to install by hand? Same result, one command at a time</summary>
+<summary>Install by hand instead</summary>
 
-Inside Claude Code, one line at a time (the `!` at the start runs the command as if you typed it in a terminal):
+Paste these into Claude one at a time. The `!` runs a line as a terminal command.
 
 ```
 ! claude plugin marketplace add sassarini-marco/track-to-demo --scope local
@@ -209,61 +183,49 @@ Inside Claude Code, one line at a time (the `!` at the start runs the command as
 ! claude plugin install document-skills@anthropic-agent-skills --scope local
 ```
 
-Only for an empty folder or a React app with shadcn/ui (with `pnpm`, `yarn` or `bun` use `pnpm dlx`, `yarn dlx` or `bunx` instead of `npx`):
+Only for an empty folder or a React app with shadcn/ui (use `pnpm dlx`, `yarn dlx` or `bunx` if that's your package manager):
 
 ```
 ! npx skills add shadcn/ui --skill shadcn
 ```
 
-Add the line `.claude/settings.local.json` to your project's `.gitignore`, then run `/reload-plugins` and `/reload-skills`.
+Add `.claude/settings.local.json` to your `.gitignore`, then run `/reload-plugins` and `/reload-skills`.
 
 </details>
 
----
-
-## Files that appear in your project
-
-Claude creates and fills these in. The only things you add yourself are your slide template in `templates/` and any data files that came with the challenge in `data/`.
+### Files in your project
 
 | File | What's in it |
 |---|---|
 | `BRIEF.md` | The plan: challenge, goals, team, schedule, technology, rules |
-| `explorations/` | Reference images and links to everyone's design boards |
-| `WORK.md` | The task list: who does what, status, test evidence |
-| `PRESENTATION.md` | Demo script, speaker notes, Q&A |
-| `data/` | The data the prototype uses. Synthetic data is saved in git so the whole team has it; files from the challenge stay out of git |
-| `templates/` | Your slide template and the final `.pptx`. You create it; it stays out of git |
+| `explorations/` | Reference images and links to the design boards |
+| `WORK.md` | Tasks, owners, status and test results |
+| `PRESENTATION.md` | Demo script, speaker notes, likely questions |
+| `data/` | The demo data. Made-up data is committed; files from the challenge are not |
+| `templates/` | Your slide template and the exported deck. Not committed |
 
----
+Claude creates all of these. You only add the template and any data that came with the challenge.
 
-## Words you might not know
+### Words used here
 
-- **Track**: the challenge you received.
-- **Board**: a canvas on claude.ai where Claude draws screen designs.
-- **Design system**: a set of colours, fonts and components, so everything looks consistent.
-- **Contract freeze**: the moment the team stops changing how the pieces talk to each other, so everyone can work in parallel safely.
-- **Feature freeze**: the moment you stop adding things and only fix and rehearse.
-- **Commit / push**: saving your work in git / sending it to GitHub.
+- **Track**: the challenge you were given.
+- **Board**: a canvas on claude.ai where Claude draws screens.
+- **Design system**: a shared set of colours, fonts and components.
+- **Contract freeze**: when the team stops changing how the parts of the app talk to each other, so everyone can build in parallel.
+- **Feature freeze**: when you stop adding things and only fix and rehearse.
 
----
+### Limits
 
-## Good to know
+- Claude installs nothing unless you ask, and never handles passwords.
+- Boards and decks need an interactive session; they don't work with `claude -p`.
+- To read someone else's board, Claude needs edit access. With view access it only gets a summary.
+- Checking the app in the browser doesn't replace your tests.
 
-- Claude never invents numbers or results, and labels mock-ups as mock-ups.
-- Claude never installs anything on its own and never handles passwords: when something is missing, it tells you the command to run. It installs only when you ask, as in the setup.
-- Boards and decks need an interactive session. They don't work with `claude -p`.
-- To read someone else's board you need **edit** access. With view access Claude only gets a summary.
-- Checking the app in the browser is useful, but it doesn't replace your tests.
-
----
-
-## For plugin developers
+### Working on the plugin
 
 ```sh
 claude plugin validate .
 claude --plugin-dir .
 ```
 
-## License
-
-MIT
+Licensed under MIT.
