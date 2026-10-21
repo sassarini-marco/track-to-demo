@@ -37,7 +37,8 @@ claude --chrome
 **2.** Paste this inside Claude Code. Claude installs everything; say yes when it asks.
 
 ```
-Set up track-to-demo in this project: follow the instructions in https://raw.githubusercontent.com/sassarini-marco/track-to-demo/main/SETUP.md
+Set up track-to-demo in this project, following:
+https://raw.githubusercontent.com/sassarini-marco/track-to-demo/main/SETUP.md
 ```
 
 **3.** When Claude is done, paste these two, one at a time:
@@ -50,7 +51,7 @@ Set up track-to-demo in this project: follow the instructions in https://raw.git
 /reload-skills
 ```
 
-**4.** Go. One person starts the day and pastes the challenge:
+**4.** Go. One person pastes this, then pastes the challenge text:
 
 ```
 /track-to-demo:kickoff
