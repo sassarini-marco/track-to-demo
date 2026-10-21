@@ -39,25 +39,24 @@ track-to-demo gives the day a backbone:
 ## How the day flows
 
 ```mermaid
-flowchart LR
+flowchart TD
     T([📄 Challenge]) --> K[🧭 kickoff]
-    K --> E1[🎨 explore<br/>person A]
-    K --> E2[🎨 explore<br/>person B]
+    K -. writes .-> B[(BRIEF.md · data/)]
+    K --> E1[🎨 explore · person A]
+    K --> E2[🎨 explore · person B]
     E1 --> C[✨ explore compose]
     E2 --> C
     C --> H[🛠️ build handoff]
-    H --> N[build next<br/>task by task]
+    H -. writes .-> W[(WORK.md)]
+    H --> N[build next · task by task]
     N --> V[✅ build verify]
     V -- problems become tasks --> N
     V --> P[🎤 present]
+    P -. writes .-> S[(deck · PRESENTATION.md)]
     P --> D([🏁 Demo])
-
-    K -. writes .-> B[(BRIEF.md<br/>data/)]
-    H -. writes .-> W[(WORK.md)]
-    P -. writes .-> S[(deck · .pptx<br/>PRESENTATION.md)]
 ```
 
-Five commands, one per phase. Everything is written into plain files in your repository, so the whole team, and Claude, always start from the same facts.
+Five phases, each one a short command. Everything is written into plain files in your repository, so the whole team, and Claude, always start from the same facts.
 
 ---
 
