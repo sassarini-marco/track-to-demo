@@ -14,7 +14,10 @@ Inspect the host repo: commands, UI, auth, roles, tenancy, persistence, forms, d
 The brief's "Stack and patterns" is a constraint: every task uses that stack and follows those patterns, so code
 written by different people fits together. A deviation is a decision recorded in WORK.md. With an empty repo, the
 first task scaffolds that stack; there are no host components to protect yet, so shadcn `init` is fine there.
-Create WORK.md with: problem and scenario, direction, stack and patterns (one line, from the brief), non-goals, input/output contracts, integrations, authorization
+The datasets in the brief's "Data" section are the demo's only data: their format is a contract, and loading them into
+the app through the host's persistence (seed or fixture) is a task. Changing a dataset after the contract freeze is a
+recorded decision, because boards, tests and deck depend on the same numbers.
+Create WORK.md with: problem and scenario, direction, stack and patterns (one line, from the brief), data, non-goals, input/output contracts, integrations, authorization
 boundaries, vertical tasks with one owner each (split a task that spans two owners), files per owner, acceptance
 criteria taken from the track, status and evidence. Mark assumptions and blockers. Never assume host APIs that do not
 exist: endpoints the track needs are new contracts, written in WORK.md and frozen at the contract freeze. Adapt the direction to the host, do not paste a parallel app.
@@ -36,7 +39,7 @@ WORK.md together, so the rest of the team starts from the real state.
 Check only this track. Build the checklist from the acceptance criteria, scoring and penalties in the brief, then add:
 end to end on the real server; authorization and isolation between users, roles or tenants when the track has them;
 error and empty states; the host test runner; caches, exports and public artifacts; no secrets in pages or logs;
-no invented numbers in UI or narration. Use the browser when available, never instead of tests.
+no invented numbers in UI or narration: every number shown comes from a dataset in the brief or from the running app. Use the browser when available, never instead of tests.
 UI: compare the integrated page with the chosen board and run impeccable's audit if it is installed. Do not fix other
 people's files: add each problem to the task list in WORK.md, with its owner, so `next` picks it up.
 Classify each requirement as verified, failed, not verified or not applicable, with evidence. Commit WORK.md.

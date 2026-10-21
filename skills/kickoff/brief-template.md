@@ -19,6 +19,11 @@
 - Data and sources allowed:
 - Non-goals:
 
+## Data
+<!-- One line per dataset: path, origin (track, host repo or synthetic), what it is for, committed or not.
+     Datasets live in data/. Synthetic data is committed so the whole team shows the same numbers; files that come with
+     the track stay out of git unless the team allows it; host data stays where the host keeps it. -->
+
 ## Host repository
 <!-- Test and dev commands, ports, existing auth/roles/tenancy, forms, document store, UI tokens and components,
      how to switch user or role for tests and demo. Facts found in the repo, not guesses. -->

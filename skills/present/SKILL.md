@@ -6,7 +6,7 @@ description: "Prepare the demo presentation: agree the deck content with the tea
 # Present
 Arguments: $ARGUMENTS
 Reply in the user's language. Read BRIEF.md and WORK.md. Respect the demo and Q&A lengths in the schedule.
-Never invent results, metrics or integrations. Keep mock, implemented and verified apart.
+Never invent results, metrics or integrations. Keep mock, implemented and verified apart, and say which data is synthetic.
 
 1. Content before form. Propose the deck outline from WORK.md: problem and promise, live demo with the wow moment,
    why trust it, results and limits; one line of content per slide, timings and speakers. Ask the team what to change.

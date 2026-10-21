@@ -20,8 +20,9 @@ Aim to finish a board well before the contract freeze in the schedule: a complet
 4. Artboards: the main screen with the wow moment, the restricted role or empty-permission view if the track has roles,
    the answer to a typical question or action, and the empty and error states. The wow moment is a composition or
    interaction idea that reads in a still screenshot, not an animation or a nicely made chart: if, with the name
-   removed, it could be any SaaS dashboard, the direction is not there yet. Use only the brief's scenario data and the
-   host's real data, with no unit or currency the data does not declare; a sticky note says what is simulated.
+   removed, it could be any SaaS dashboard, the direction is not there yet. Use only the datasets in the brief's "Data"
+   section and the host's real data, with no unit or currency the data does not declare; a sticky note says which
+   data is synthetic and what is simulated.
 5. If impeccable is installed, use it to polish the artboards: it removes AI slop without changing the direction.
    Boards are not verified in the browser; visual verification happens in build, on the integrated page.
 6. One note on the board: the direction in one sentence, references (origin, permitted use, what was taken), what is simulated.

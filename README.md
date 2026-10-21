@@ -119,6 +119,8 @@ Everyone opens Claude Code in the project folder. Each step is one command.
 
 Have a company slide template (`.pptx` or `.potx`)? Before starting, create a folder called `templates` in your project and put the file there. Claude keeps that folder out of git, so company files are never uploaded by mistake. No template? Skip this: the deck can still be downloaded as `.pptx`.
 
+Did the challenge come with data files (spreadsheets, CSV, JSON…)? Put them in a folder called `data` in your project. Claude keeps them out of git too.
+
 ```
 /track-to-demo:kickoff
 ```
@@ -128,6 +130,7 @@ Paste the challenge text (or give a file path or link). Claude:
 - summarises goals, judging criteria and deadlines, and asks you to confirm;
 - looks at your code to understand the technology already in use. If the folder is empty, it proposes **TypeScript + React with shadcn/ui** and asks you to confirm;
 - asks, all at once, only what's missing: who's in the team, the schedule, the idea, the design system, the slide template;
+- lists the data the prototype will use and, for whatever is missing, creates realistic **made-up (synthetic) data** in `data/`, so designs, app and slides all show the same numbers;
 - writes everything in **`BRIEF.md`**, the shared plan every later step reads.
 
 Then **each person who explores a design** puts 2-3 images they like (screenshots of apps, websites, anything) in `explorations/references/<their-name>/`.
@@ -182,7 +185,7 @@ Claude proposes the slide outline, builds the deck with real screenshots, waits 
 
 ## Files that appear in your project
 
-Claude creates and fills these in. The only exception is `templates/`, where you put your slide template if you have one.
+Claude creates and fills these in. The only things you add yourself are your slide template in `templates/` and any data files that came with the challenge in `data/`.
 
 | File | What's in it |
 |---|---|
@@ -190,6 +193,7 @@ Claude creates and fills these in. The only exception is `templates/`, where you
 | `explorations/` | Reference images and links to everyone's design boards |
 | `WORK.md` | The task list: who does what, status, test evidence |
 | `PRESENTATION.md` | Demo script, speaker notes, Q&A |
+| `data/` | The data the prototype uses. Synthetic data is saved in git so the whole team has it; files from the challenge stay out of git |
 | `templates/` | Your slide template and the final `.pptx`. You create it; it stays out of git |
 
 ---
