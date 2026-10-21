@@ -34,7 +34,7 @@ track-to-demo gives the day a backbone:
 - 🎨 **Design ideas side by side, then one direction.** Each person sketches a direction on a claude.ai board from images they like; the team picks the best parts and Claude merges them.
 - 🛠️ **Building that holds together.** Small tasks with one owner each, real tests, and a check against the challenge's criteria before every freeze.
 - 🎤 **A deck you can defend.** Real screenshots, real data, mock-ups labelled as mock-ups, and on your company template if you have one.
-- 🧑‍🤝‍🧑 **Made for people new to AI.** Plain words, few options, one recommendation. No prompt writing needed.
+- 🧑‍🤝‍🧑 **Less friction, more hackathon.** Claude takes care of the plumbing: setup, plans, task lists, checks, slides. Your time goes to the best part of the day: brainstorming, chasing the idea, the team and the people around you. First-timers and seasoned engineers alike.
 
 ## How the day flows
 
