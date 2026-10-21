@@ -29,7 +29,7 @@ No claude.ai login? It still works: the design ideas become pages of your app in
 
 ## Setup (once per person, ~5 minutes)
 
-Copy and paste each block, one at a time, in order. When a step says *"inside Claude Code"*, paste it where you chat with Claude. When it says *"in a terminal"*, paste it in a normal terminal window.
+Copy and paste each block, one at a time, in order. When a step says *"inside Claude Code"*, paste it where you chat with Claude. When it says *"in a terminal"*, paste it in a normal terminal window. A line starting with `!` goes inside Claude Code too: Claude runs it as a terminal command.
 
 ### Step 1: start Claude Code with the browser enabled
 
@@ -89,10 +89,10 @@ What they do:
 
 ### Step 4: shadcn helper (only if your app uses React with shadcn/ui)
 
-That's the default for new projects. In a terminal, inside your project folder:
+That's the default for new projects. Inside Claude Code, opened in your project folder (the `!` at the start runs the command as if you typed it in a terminal, without leaving Claude):
 
 ```
-npx skills add shadcn/ui --skill shadcn
+! npx skills add shadcn/ui --skill shadcn
 ```
 
 If your project uses `pnpm`, `yarn` or `bun`, use `pnpm dlx`, `yarn dlx` or `bunx` instead of `npx`.
