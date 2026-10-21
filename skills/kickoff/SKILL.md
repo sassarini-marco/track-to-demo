@@ -41,11 +41,11 @@ Reply in the user's language. BRIEF.md in the project root is the single source 
 7. Ask each explorer to put 2-3 reference images in explorations/references/<name>/. Without references, parallel
    explorations tend to look alike.
 8. Check the companions and say what is missing, with the exact commands, without installing anything yourself:
-   frontend-design (`/plugin install frontend-design@claude-plugins-official`), impeccable
-   (`/plugin marketplace add pbakaus/impeccable`, then `/plugin install impeccable@impeccable`), the pptx skill when the
-   brief names a slide template (`/plugin marketplace add anthropics/skills`, then
-   `/plugin install document-skills@anthropic-agent-skills`), the shadcn skill only when the repo has a components.json or the brief
+   frontend-design (`! claude plugin install frontend-design@claude-plugins-official --scope local`), impeccable
+   (`! claude plugin marketplace add pbakaus/impeccable --scope local`, then `! claude plugin install impeccable@impeccable --scope local`), the pptx skill when the
+   brief names a slide template (`! claude plugin marketplace add anthropics/skills --scope local`, then
+   `! claude plugin install document-skills@anthropic-agent-skills --scope local`), the shadcn skill only when the repo has a components.json or the brief
    chooses shadcn/ui for a new repo (`! npx skills add shadcn/ui --skill shadcn`, typed inside Claude Code, with the project's package runner: only that skill, not the migration
-   ones), and the browser (`/chrome`). Boards and decks need a claude.ai login; without it, explore falls back to mocks in the app.
+   ones), and the browser (`/chrome`). After installing, `/reload-plugins` and `/reload-skills` load them without leaving the session. Boards and decks need a claude.ai login; without it, explore falls back to mocks in the app.
 9. If the project is a git repository, commit BRIEF.md, data/ and .gitignore, if you changed them. Then tell the team the next step: each explorer runs
    `/track-to-demo:explore <name>`.

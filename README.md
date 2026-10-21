@@ -29,9 +29,9 @@ No claude.ai login? It still works: the design ideas become pages of your app in
 
 ## Setup (once per person, ~5 minutes)
 
-Copy and paste each block, one at a time, in order. When a step says *"inside Claude Code"*, paste it where you chat with Claude. When it says *"in a terminal"*, paste it in a normal terminal window. A line starting with `!` goes inside Claude Code too: Claude runs it as a terminal command.
+Three steps. You only copy and paste.
 
-### Step 1: start Claude Code with the browser enabled
+### Step 1: open Claude Code
 
 In a terminal, inside your project folder:
 
@@ -45,59 +45,43 @@ Then, inside Claude Code, log in to claude.ai (skip it if you are already logged
 /login
 ```
 
-### Step 2: install the plugin (required)
+### Step 2: let Claude install everything
 
-Inside Claude Code:
-
-```
-/plugin marketplace add sassarini-marco/track-to-demo
-```
+Copy this whole message and paste it inside Claude Code:
 
 ```
-/plugin install track-to-demo@track-to-demo
+Install the track-to-demo setup for me. Run these commands in the terminal, one at a time.
+If one says the marketplace or plugin is already there, that's fine: go on.
+If one fails for another reason, go on with the rest and tell me at the end what failed and why.
+
+claude plugin marketplace add sassarini-marco/track-to-demo --scope local
+claude plugin install track-to-demo@track-to-demo --scope local
+claude plugin install frontend-design@claude-plugins-official --scope local
+claude plugin marketplace add pbakaus/impeccable --scope local
+claude plugin install impeccable@impeccable --scope local
+claude plugin marketplace add anthropics/skills --scope local
+claude plugin install document-skills@anthropic-agent-skills --scope local
+
+Then, only if this folder is empty or has a components.json (a React app with shadcn/ui), run
+npx skills add shadcn/ui --skill shadcn
+with the package runner this project uses (npx, pnpm dlx, yarn dlx or bunx).
+
+Install nothing else. When you're done, tell me what was installed and remind me to type /reload-plugins and /reload-skills.
 ```
 
-### Step 3: install the recommended helpers
+Claude asks your permission before each command: say yes.
 
-These are optional, but the results are much better with them. Inside Claude Code, one line at a time:
+Everything is installed **only in this project and only for you** (`--scope local`): your other projects don't change, and nothing ends up in git. For another project, repeat the setup there.
 
-```
-/plugin install frontend-design@claude-plugins-official
-```
+What gets installed:
 
-```
-/plugin marketplace add pbakaus/impeccable
-```
-
-```
-/plugin install impeccable@impeccable
-```
-
-```
-/plugin marketplace add anthropics/skills
-```
-
-```
-/plugin install document-skills@anthropic-agent-skills
-```
-
-What they do:
-
+- **track-to-demo**: this plugin (required);
 - **frontend-design**: better-looking interfaces;
 - **impeccable**: polishes designs and checks the UI for the typical "made by AI" look;
-- **document-skills**: exports the final deck as a `.pptx` on your company template.
+- **document-skills**: exports the final deck as a `.pptx` on your company template;
+- **shadcn** (only for React apps with shadcn/ui, the default for new projects): helps Claude use those components correctly.
 
-### Step 4: shadcn helper (only if your app uses React with shadcn/ui)
-
-That's the default for new projects. Inside Claude Code, opened in your project folder (the `!` at the start runs the command as if you typed it in a terminal, without leaving Claude):
-
-```
-! npx skills add shadcn/ui --skill shadcn
-```
-
-If your project uses `pnpm`, `yarn` or `bun`, use `pnpm dlx`, `yarn dlx` or `bunx` instead of `npx`.
-
-### Step 5: reload and check
+### Step 3: reload and check
 
 No need to leave Claude Code. Inside it, one line at a time:
 
@@ -113,7 +97,50 @@ No need to leave Claude Code. Inside it, one line at a time:
 /plugin
 ```
 
-You should see `track-to-demo`, `frontend-design`, `impeccable` and `document-skills` in the list. If one is missing, run its step again. `kickoff` also checks the helpers and tells you if anything is missing.
+You should see `track-to-demo`, `frontend-design`, `impeccable` and `document-skills` in the list. `kickoff` also checks the helpers and tells you if anything is missing.
+
+<details>
+<summary>Prefer to install by hand? Same result, one command at a time</summary>
+
+Inside Claude Code, one line at a time:
+
+```
+! claude plugin marketplace add sassarini-marco/track-to-demo --scope local
+```
+
+```
+! claude plugin install track-to-demo@track-to-demo --scope local
+```
+
+```
+! claude plugin install frontend-design@claude-plugins-official --scope local
+```
+
+```
+! claude plugin marketplace add pbakaus/impeccable --scope local
+```
+
+```
+! claude plugin install impeccable@impeccable --scope local
+```
+
+```
+! claude plugin marketplace add anthropics/skills --scope local
+```
+
+```
+! claude plugin install document-skills@anthropic-agent-skills --scope local
+```
+
+Only for React apps with shadcn/ui (the `!` at the start runs the command as if you typed it in a terminal, without leaving Claude; with `pnpm`, `yarn` or `bun` use `pnpm dlx`, `yarn dlx` or `bunx` instead of `npx`):
+
+```
+! npx skills add shadcn/ui --skill shadcn
+```
+
+Then do Step 3.
+
+</details>
 
 ---
 
