@@ -94,7 +94,10 @@ Then, inside Claude Code, log in to claude.ai (skip it if you are already logged
 
 ### Step 2: let Claude install everything
 
-Copy this whole message and paste it inside Claude Code:
+Open the box below, copy the message with the copy button in its corner, and paste it inside Claude Code:
+
+<details>
+<summary><b>📋 Show the setup message</b></summary>
 
 ```
 Install the track-to-demo setup for me. Run these commands in the terminal, one at a time.
@@ -117,6 +120,8 @@ Finally, make sure the .gitignore in this folder has the line .claude/settings.l
 
 Install nothing else. When you're done, tell me what was installed and remind me to type /reload-plugins and /reload-skills.
 ```
+
+</details>
 
 Claude asks your permission before each command: say yes.
 
