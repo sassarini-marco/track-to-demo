@@ -1,9 +1,13 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset=".github/banner-dark.svg">
-  <img src=".github/banner-light.svg" alt="track-to-demo. Morning: a challenge. Evening: a working prototype and a pitch deck. The day goes kickoff, explore, build, present, demo." width="100%">
+  <img src=".github/banner-light.svg" alt="track-to-demo. Ideas win hackathons. We clear the way. The day goes kickoff, explore, build, present, demo." width="100%">
 </picture>
 
-A Claude Code plugin for hackathon teams. A few short commands take you from the challenge to the demo, and Claude does the busywork in between. MIT licensed.
+**Morning: a challenge. Evening: a working prototype and a pitch deck.**
+
+At a hackathon, the idea is what counts. Everything around it, agreeing on a plan, splitting the work, keeping five designs from drifting apart, building the slides at the last minute, is friction that eats the day. track-to-demo is a Claude Code plugin that takes that friction away. A few short commands carry your team from the challenge to the demo, so your time goes to the idea and to the people you're building it with.
+
+Free and MIT licensed.
 
 ## Start
 
@@ -56,11 +60,9 @@ Claude asks only what it can't find out on its own, and answers in your language
 
 ## Why
 
-A hackathon day is short, and it goes wrong in the same places every time. The first hour disappears into agreeing what to build. Five people sketch five different apps. Someone's work gets overwritten just before the demo. A slide shows a number nobody can explain.
+A hackathon day is short, and it goes wrong in the same places every time. The first hour disappears into agreeing what to build. Five people sketch five different apps. Someone's work gets overwritten just before the demo. A slide shows a number nobody can explain. None of that has anything to do with the idea, and all of it can be prevented. It works the same for someone on their first hackathon and for a team that has done twenty.
 
-track-to-demo handles those parts so the team can spend the day on the ones worth being there for: the idea, the arguments about it, and the people you're building with. It works the same for someone on their first hackathon and for a team that has done twenty.
-
-What that looks like in practice:
+How track-to-demo prevents it:
 
 - The plan is a file in your repo, not a memory of a meeting. Every step reads it, so nobody works from an old version.
 - Designs start apart and end as one. Each designer explores from their own reference images, then the team takes the best parts of each board.
