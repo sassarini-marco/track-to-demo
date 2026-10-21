@@ -1,13 +1,9 @@
-<p align="center">
-  <img src=".claude-plugin/icon.png" alt="" width="112" height="112">
-</p>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset=".github/banner-dark.png">
+  <img src=".github/banner-light.png" alt="track-to-demo. Morning: a challenge. Evening: a working prototype and a pitch deck. The day goes kickoff, explore, build, present, demo." width="100%">
+</picture>
 
-<h1 align="center">track-to-demo</h1>
-
-<p align="center">
-  <b>Morning: a challenge. Evening: a working prototype and a pitch deck.</b><br>
-  A Claude Code plugin for hackathon teams. MIT licensed.
-</p>
+A Claude Code plugin for hackathon teams. Five short commands take you from the challenge to the demo, and Claude does the busywork in between. MIT licensed.
 
 ## Start
 
