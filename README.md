@@ -195,7 +195,7 @@ Then do Step 3.
 
 ## The day, step by step
 
-Everyone opens Claude Code in the project folder. Each step is one command.
+Everyone opens Claude Code in the project folder. Each step starts with a short command (build has three, one for each moment).
 
 ### 1. 🧭 Kickoff (one person, ~15 minutes)
 
@@ -211,7 +211,7 @@ Paste the challenge text (or give a file path or link). Claude:
 
 - summarises goals, judging criteria and deadlines, and asks you to confirm;
 - looks at your code to understand the technology already in use. If the folder is empty, it proposes **TypeScript + React with shadcn/ui** and asks you to confirm;
-- asks, all at once, only what's missing: who's in the team, the schedule, the idea, the design system, the slide template;
+- asks, all at once, only what's missing: who's in the team, the schedule, the idea, the technology (only for an empty folder), the design system, the slide template;
 - lists the data the prototype will use and, for whatever is missing, creates realistic **made-up (synthetic) data** in `data/`, so designs, app and slides all show the same numbers;
 - writes everything in **`BRIEF.md`**, the shared plan every later step reads.
 
@@ -253,7 +253,7 @@ Each developer runs this to do their next task. Claude writes the code, adds tes
 /track-to-demo:build verify
 ```
 
-Run this before each checkpoint and before the final freeze. Claude checks the prototype against the challenge's criteria and adds any problem it finds as a new task.
+Run this before each checkpoint and before the feature freeze. Claude checks the prototype against the challenge's criteria and adds any problem it finds as a new task.
 
 ### 5. 🎤 Present (presenter)
 
