@@ -1,15 +1,63 @@
-# track-to-demo
+<p align="center">
+  <img src=".claude-plugin/icon.png" alt="track-to-demo icon" width="128" height="128">
+</p>
 
-**From a challenge to a working prototype and a pitch deck, in one day, with Claude doing the heavy lifting.**
+<h1 align="center">track-to-demo</h1>
 
-You get a challenge (a hackathon "track", a brief, a spec). By the end of the day your team has:
+<p align="center">
+  <b>Morning: a challenge. Evening: a working prototype and a pitch deck.</b><br>
+  A Claude Code plugin that walks your team through the whole day, so you can focus on the idea.
+</p>
 
-- a short shared plan everyone agrees on (`BRIEF.md`);
-- a few design ideas, and one final design picked by the team;
-- a working prototype inside your own code repository, tested;
-- a slide deck for the demo, on your company template if you have one.
+<p align="center">
+  <img alt="Claude Code plugin" src="https://img.shields.io/badge/Claude%20Code-plugin-5C38C4">
+  <img alt="Skills" src="https://img.shields.io/badge/skills-4-FFC45C">
+  <img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-24204F">
+</p>
 
-You don't need to know how to write prompts. You type a few short commands and Claude asks you only what it can't figure out by itself.
+<p align="center">
+  <a href="#setup-once-per-person-5-minutes">Setup</a> ·
+  <a href="#the-day-step-by-step">The day</a> ·
+  <a href="#files-that-appear-in-your-project">Files</a> ·
+  <a href="#words-you-might-not-know">Glossary</a>
+</p>
+
+---
+
+## Why you'll like it
+
+Hackathons and time-boxed prototypes go wrong in the same ways. Hours go into deciding instead of building. Five people end up designing five apps. Someone's work gets overwritten an hour before the demo. The slides show numbers nobody can back up.
+
+track-to-demo gives the day a backbone:
+
+- 🧭 **One shared plan in 15 minutes.** Paste the challenge; Claude pulls out the goals, judging criteria and deadlines, and asks only what it can't work out by itself.
+- 🎨 **Design ideas side by side, then one direction.** Each person sketches a direction on a claude.ai board from images they like; the team picks the best parts and Claude merges them.
+- 🛠️ **Building that holds together.** Small tasks with one owner each, real tests, and a check against the challenge's criteria before every freeze.
+- 🎤 **A deck you can defend.** Real screenshots, real data, mock-ups labelled as mock-ups, and on your company template if you have one.
+- 🧑‍🤝‍🧑 **Made for people new to AI.** Plain words, few options, one recommendation. No prompt writing needed.
+
+## How the day flows
+
+```mermaid
+flowchart LR
+    T([📄 Challenge]) --> K[🧭 kickoff]
+    K --> E1[🎨 explore<br/>person A]
+    K --> E2[🎨 explore<br/>person B]
+    E1 --> C[✨ explore compose]
+    E2 --> C
+    C --> H[🛠️ build handoff]
+    H --> N[build next<br/>task by task]
+    N --> V[✅ build verify]
+    V -- problems become tasks --> N
+    V --> P[🎤 present]
+    P --> D([🏁 Demo])
+
+    K -. writes .-> B[(BRIEF.md<br/>data/)]
+    H -. writes .-> W[(WORK.md)]
+    P -. writes .-> S[(deck · .pptx<br/>PRESENTATION.md)]
+```
+
+Five commands, one per phase. Everything is written into plain files in your repository, so the whole team, and Claude, always start from the same facts.
 
 ---
 
@@ -150,7 +198,7 @@ Then do Step 3.
 
 Everyone opens Claude Code in the project folder. Each step is one command.
 
-### 1. Kickoff (one person, ~15 minutes)
+### 1. 🧭 Kickoff (one person, ~15 minutes)
 
 Have a company slide template (`.pptx` or `.potx`)? Before starting, create a folder called `templates` in your project and put the file there. Claude keeps that folder out of git, so company files are never uploaded by mistake. No template? Skip this: the deck can still be downloaded as `.pptx`.
 
@@ -170,7 +218,7 @@ Paste the challenge text (or give a file path or link). Claude:
 
 Then **each person who explores a design** puts 2-3 images they like (screenshots of apps, websites, anything) in `explorations/references/<their-name>/`.
 
-### 2. Explore designs (each explorer, in parallel)
+### 2. 🎨 Explore designs (each explorer, in parallel)
 
 ```
 /track-to-demo:explore anna
@@ -178,7 +226,7 @@ Then **each person who explores a design** puts 2-3 images they like (screenshot
 
 (use your own name). Claude creates a design board on claude.ai from your reference images, with the main screen and the empty and error states. Share the board with the team (**Share → edit access**).
 
-### 3. Pick the final design (team)
+### 3. ✨ Pick the final design (team)
 
 Look at the boards together and say what you like from each one, for example *"layout from Anna, colours from Luca"*. Then:
 
@@ -188,7 +236,7 @@ Look at the boards together and say what you like from each one, for example *"l
 
 Claude builds the **"Final direction"** board from your choices. Not sure what to pick? Run it anyway: Claude compares the boards and recommends a mix, then asks before building it.
 
-### 4. Build (developers)
+### 4. 🛠️ Build (developers)
 
 ```
 /track-to-demo:build handoff
@@ -208,7 +256,7 @@ Each developer runs this to do their next task. Claude writes the code, adds tes
 
 Run this before each checkpoint and before the final freeze. Claude checks the prototype against the challenge's criteria and adds any problem it finds as a new task.
 
-### 5. Present (presenter)
+### 5. 🎤 Present (presenter)
 
 ```
 /track-to-demo:present
@@ -248,7 +296,7 @@ Claude creates and fills these in. The only things you add yourself are your sli
 
 - Claude replies in your language.
 - Claude never invents numbers or results, and labels mock-ups as mock-ups.
-- Claude doesn't install things or handle passwords for you: when something is missing, it tells you the command to run.
+- Claude never installs anything on its own and never handles passwords: when something is missing, it tells you the command to run. It installs only when you ask, as in the setup.
 - Boards and decks need an interactive session. They don't work with `claude -p`.
 - To read someone else's board you need **edit** access. With view access Claude only gets a summary.
 - Checking the app in the browser is useful, but it doesn't replace your tests.
