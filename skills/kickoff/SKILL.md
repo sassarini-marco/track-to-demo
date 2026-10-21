@@ -47,5 +47,7 @@ Reply in the user's language. BRIEF.md in the project root is the single source 
    `! claude plugin install document-skills@anthropic-agent-skills --scope local`), the shadcn skill only when the repo has a components.json or the brief
    chooses shadcn/ui for a new repo (`! npx skills add shadcn/ui --skill shadcn`, typed inside Claude Code, with the project's package runner: only that skill, not the migration
    ones), and the browser (`/chrome`). After installing, `/reload-plugins` and `/reload-skills` load them without leaving the session. Boards and decks need a claude.ai login; without it, explore falls back to mocks in the app.
-9. If the project is a git repository, commit BRIEF.md, data/ and .gitignore, if you changed them. Then tell the team the next step: each explorer runs
+9. Make sure the project's .gitignore lists `.claude/settings.local.json`: the local-scope plugins and each person's
+   permissions live there, and they should not reach the team's repo.
+   If the project is a git repository, commit BRIEF.md, data/ and .gitignore, if you changed them. Then tell the team the next step: each explorer runs
    `/track-to-demo:explore <name>`.

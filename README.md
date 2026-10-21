@@ -66,12 +66,14 @@ Then, only if this folder is empty or has a components.json (a React app with sh
 npx skills add shadcn/ui --skill shadcn
 with the package runner this project uses (npx, pnpm dlx, yarn dlx or bunx).
 
+Finally, make sure the .gitignore in this folder has the line .claude/settings.local.json (create the file if it is missing).
+
 Install nothing else. When you're done, tell me what was installed and remind me to type /reload-plugins and /reload-skills.
 ```
 
 Claude asks your permission before each command: say yes.
 
-Everything is installed **only in this project and only for you** (`--scope local`): your other projects don't change, and nothing ends up in git. For another project, repeat the setup there.
+Everything is installed **only in this project and only for you** (`--scope local`): your other projects don't change. The settings file that records it, `.claude/settings.local.json`, is added to `.gitignore`, so it never ends up in git. For another project, repeat the setup there.
 
 What gets installed:
 
