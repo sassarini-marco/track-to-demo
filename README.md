@@ -68,7 +68,7 @@ Not logged in to claude.ai yet? Type `/login` first: boards and slides live ther
 | Start | one person | `/track-to-demo:kickoff` | `BRIEF.md`: the shared plan, plus realistic demo data |
 | Morning | each designer | `/track-to-demo:explore <your-name>` | your design board on claude.ai |
 | Late morning | the team | `/track-to-demo:explore compose` | the final design, merged from the best parts |
-| Once | one developer | `/track-to-demo:build handoff` | `WORK.md`: small tasks, one owner each |
+| Midday | one developer | `/track-to-demo:build handoff` | `WORK.md`: small tasks, one owner each |
 | All day | each developer | `/track-to-demo:build next` | your next task built, tested and committed |
 | Before each deadline | anyone | `/track-to-demo:build verify` | a check against the judging criteria |
 | Afternoon | the presenter | `/track-to-demo:present` | the slide deck and the demo script |
